@@ -2,32 +2,17 @@
 /**
  * Write a description of class CoffeeMakerQuest here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Neel Kowdley <nkowdley@gmail.com>
+ * v0.0
  */
 public class CoffeeMakerQuest
 {
-    // instance variables - replace the example below with your own
-    private int x;
 
-    /**
-     * Constructor for objects of class CoffeeMakerQuest
-     */
     public CoffeeMakerQuest()
     {
-        // initialise instance variables
-        x = 0;
-    }
+        public static void main(String[] args) throws Exception
+        {
+            System.out.println("Coffee Maker Quest v1.1");
 
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        }
     }
-}
