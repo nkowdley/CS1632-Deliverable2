@@ -72,7 +72,9 @@ public class Room
   * Gets the adjective description of a room, based on the array of
   * @param  roomNum  The "number" of the room the user is trying to enter.
   * @return adjective  a String that has an adjective chosen from an array
-  */
-  void populateRoom(int roomNum)
-  {
+  */  
+  public String getDescription(){
+	String adj = "";
+	return adj;
   }
+}
