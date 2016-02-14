@@ -13,13 +13,13 @@ public class CoffeeMakerQuest
   {
     System.out.println("Coffee Maker Quest v1.1");
     System.out.println("Instructions for Coffee Maker Quest - ");
-    System.out.println("You are a brave student trying to study for finals, but you need caffeine.");
+    System.out.println("You are a brave student trying to study for Bill Laboon's Software Testing Class, but you need caffeine.");
     System.out.println("The goal of the game is to collect sugar, coffee, and cream so that you can study.");
     Actions();
     return;
 
   }
-  
+
   public static void startGame(){
 	LinkedList house = new LinkedList<Room>();
 	Room room1 = new Room(1);
@@ -28,16 +28,16 @@ public class CoffeeMakerQuest
 	Room room4 = new Room(4);
 	Room room5 = new Room(5);
 	Room room6 = new Room(6);
-	
+
 	house.add(room1);
 	house.add(room2);
 	house.add(room3);
 	house.add(room4);
 	house.add(room5);
 	house.add(room6);
-	
+
   }
-  
+
   public static void Actions()
   {
     Scanner sc = new Scanner(System.in);
