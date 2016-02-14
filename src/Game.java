@@ -45,7 +45,6 @@ public class Game
 		Scanner sc = new Scanner(System.in);
 		System.out.print("INSTRUCTIONS (N,S,L,I,D,H) > ");
 		String input = sc.nextLine();
-		//System.out.println(input); //Print out input
 
 		if (input.equalsIgnoreCase("N")){
 			moveNorth();
