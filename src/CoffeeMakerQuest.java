@@ -14,7 +14,7 @@ public class CoffeeMakerQuest
   
     static LinkedList house = new LinkedList<Room>();
 
-	static ListIterator<Room> northRoom = house.listIterator();
+	static ListIterator<Room> moveRooms = house.listIterator();
 
 	static Room room0 = new Room(0);
 	static Room room1 = new Room(1);
@@ -22,8 +22,6 @@ public class CoffeeMakerQuest
 	static Room room3 = new Room(3);
 	static Room room4 = new Room(4);
 	static Room room5 = new Room(5);
-	
-	static Iterator<Room> southRoom = house.descendingIterator();
 	
 	static Room currentRoom;
 
@@ -82,15 +80,17 @@ public class CoffeeMakerQuest
 	}
 	  
 	public static void moveNorth(){
-		if (northRoom.hasNext())
-			currentRoom = northRoom.next();
+		if (moveRooms.hasNext())
+			currentRoom = moveRooms.next();
 		else
-			System.out.println("");
+			System.out.println("No north door exists.");
 	}
 	  
 	public static void moveSouth(){
-		if (southRoom.hasNext())
-			currentRoom = southRoom.next();
+		if (moveRooms.hasPrevious())
+			currentRoom = moveRooms.previous();
+		else
+			System.out.println("No south door exists.");
 	}
 	  
 	public static void look(){
