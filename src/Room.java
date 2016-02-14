@@ -91,12 +91,12 @@ public class Room
   public int getObjectInRoom()
   {
     if (this.sugar)
-    return 1;
+      return 1;
     else if (this.cream)
-    return 2;
+      return 2;
     else if (this.coffee)
-    return 3;
+      return 3;
     else
-    return 0;
+      return 0;
   }
 }
