@@ -13,6 +13,7 @@ public class CoffeeMakerQuest
 	Player p = new Player();
   
     LinkedList house = new LinkedList<Room>();
+	ListIterator<Room> nextRoom = house.listIterator();
 	Room room1 = new Room(1);
 	Room room2 = new Room(2);
 	Room room3 = new Room(3);
@@ -74,7 +75,10 @@ public class CoffeeMakerQuest
 	}
 	  
 	public static void moveNorth(){
-			
+		if (nextRoom.hasNext())
+			nextRoom.next();
+		else
+			System.out.println("");
 	}
 	  
 	public static void moveSouth(){
