@@ -19,11 +19,30 @@ public class CoffeeMakerQuest
     return;
 
   }
+  
+  public static void startGame(){
+	LinkedList house = new LinkedList<Room>();
+	Room room1 = new Room(1);
+	Room room2 = new Room(2);
+	Room room3 = new Room(3);
+	Room room4 = new Room(4);
+	Room room5 = new Room(5);
+	Room room6 = new Room(6);
+	
+	house.add(room1);
+	house.add(room2);
+	house.add(room3);
+	house.add(room4);
+	house.add(room5);
+	house.add(room6);
+	
+  }
+  
   public static void Actions()
   {
     Scanner sc = new Scanner(System.in);
     System.out.print("INSTRUCTIONS (N,S,L,I,D,H) >");
-    String input = sc.nextLine;
+    String input = sc.nextLine();
     //System.out.println(input); //Print out input
 	
 	if (input.equalsIgnoreCase("N")){
