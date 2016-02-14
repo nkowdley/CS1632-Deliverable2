@@ -11,11 +11,11 @@ import java.io.*;
 public class Room
 {
   //initialize the state of coffee cream and sugar as global variables
-  boolean coffee=false;
-  boolean  cream=false;
-  boolean  sugar=false;
-  boolean northDoor=false;
-  boolean southDoor=false;
+  int coffee=0;
+  int cream=0;
+  int sugar=0;
+  int northDoor=0;
+  int southDoor=0;
   /**
   * A constructor to create a room in the game using the "number" of the room
   * The player starts in room 0, and goes north to get into room 1, etc.
@@ -25,7 +25,7 @@ public class Room
   public Room(int roomNum)
   {
     populateRoom(roomNum);
-    getDescription();
+    String adjective=getDescription(roomNum);
   }
 
   /**
@@ -40,35 +40,32 @@ public class Room
   {
     switch(roomNum)
     {
+      case 0:
+              cream=1;
+              northDoor=1;
+              break;
       case 1:
-              cream=true;
-              northDoor=true;
-              southDoor=false;
+              coffee=1;
+              northDoor=1;
+              southDoor=1;
               break;
       case 2:
-              coffee=true;
-              northDoor=true;
-              southDoor=true;
+              northDoor=1;
+              southDoor=1;
               break;
       case 3:
-              northDoor=true;
-              southDoor=true;
+              northDoor=1;
+              southDoor=1;
               break;
       case 4:
-              northDoor=true;
-              southDoor=true;
+              northDoor=1;
+              southDoor=1;
               break;
       case 5:
-              northDoor=true;
-              southDoor=true;
+              northDoor=0;
+              southDoor=1;
+              sugar=1;
               break;
-      case 6:
-              northDoor=false;
-              southDoor=true;
-              sugar=true;
-              break;
-      default:
-            System.out.println("Something about a magical world...returning you to beginning");
     }
   }
   /**
@@ -76,27 +73,7 @@ public class Room
   * @param  roomNum  The "number" of the room the user is trying to enter.
   * @return adjective  a String that has an adjective chosen from an array
   */
-  public String getDescription()
+  void populateRoom(int roomNum)
   {
-	String adj = new String();
-  //adjectives that describe our wonderful teacher bill laboon
-  String adjArray[10]={"Inspirational", "Cool-Dude","Chili-Pepper",};
-	return adj;
+
   }
-  /**
-  * Gets the adjective description of a room, based on the array of
-  * @param  roomNum  The "number" of the room the user is trying to enter.
-  * @return adjective  a String that has an adjective chosen from an array
-  */
-  public int getObjectInRoom()
-  {
-    if (this.sugar)
-      return 1;
-    else if (this.cream)
-      return 2;
-    else if (this.coffee)
-      return 3;
-    else
-      return 0;
-  }
-}
