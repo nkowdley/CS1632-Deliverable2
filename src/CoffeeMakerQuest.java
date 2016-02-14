@@ -1,114 +1,14 @@
-/**
-* Write a description of class CoffeeMakerQuest here.
-*
-* @author Neel Kowdley <nkowdley@gmail.com>
-* @version 1.1.0
-*/
-import java.util.*;
-import java.io.*;
+public class CoffeeMakerQuest {
 
-public class CoffeeMakerQuest
-{
-  
-	static Player p = new Player();
-  
-    static LinkedList house = new LinkedList<Room>();
+	Game game = new Game();
 
-	static ListIterator<Room> moveRooms = house.listIterator();
-
-	static Room room0 = new Room(0);
-	static Room room1 = new Room(1);
-	static Room room2 = new Room(2);
-	static Room room3 = new Room(3);
-	static Room room4 = new Room(4);
-	static Room room5 = new Room(5);
-	
-	static Room currentRoom;
-
-  
 	public static void main(String[] args)
 	{
 		System.out.println("Coffee Maker Quest v1.1");
 		System.out.println("Instructions for Coffee Maker Quest - ");
 		System.out.println("You are a brave student trying to finish Deliverable 2 for Bill Laboon's Software Testing Class, but you need caffeine.");
 		System.out.println("The goal of the game is to collect sugar, coffee, and cream so that you can study.");
-		startGame();
-		Actions();
-		return;
+		game.startGame();
+		game.Actions();
 	}
-
-	public static void startGame(){
-		
-		house.add(room0);
-		house.add(room1);
-		house.add(room2);
-		house.add(room3);
-		house.add(room4);
-		house.add(room5);
-		
-	}
-
-	public static void Actions()
-	{
-		Scanner sc = new Scanner(System.in);
-		System.out.print("INSTRUCTIONS (N,S,L,I,D,H) > ");
-		String input = sc.nextLine();
-		//System.out.println(input); //Print out input
-
-		if (input.equalsIgnoreCase("N")){
-			moveNorth();
-		}
-		else if (input.equalsIgnoreCase("S")){
-			moveSouth();
-		}
-		else if (input.equalsIgnoreCase("L")){
-			look();
-		}
-		else if (input.equalsIgnoreCase("I")) {
-			p.showInventory();
-		}
-		else if (input.equalsIgnoreCase("D")) {
-			p.drink();
-		}
-		else if (input.equalsIgnoreCase("H")){
-			System.out.println("Enter \"N\" to go North, \"S\" to go South, \"L\" to Look for items, \"I\" for Inventory, \"H\" for Help, or \"D\" to Drink");
-		}
-		else
-			System.out.println("What?");
-
-		return;
-	}
-	  
-	public static void moveNorth(){
-		if (moveRooms.hasNext())
-			currentRoom = moveRooms.next();
-		else
-			System.out.println("No north door exists.");
-	}
-	  
-	public static void moveSouth(){
-		if (moveRooms.hasPrevious())
-			currentRoom = moveRooms.previous();
-		else
-			System.out.println("No south door exists.");
-	}
-	  
-	public static void look(){
-		int roomHas = currentRoom.getObjectInRoom();
-		
-		switch (roomHas){
-			
-			case 1: 
-				p.getSugar();
-			case 2:
-				p.getCream();
-			case 3:
-				p.getCoffee();
-			default:
-				System.out.println("You don't see anything out of the ordinary.");
-				
-		}
-			
-	}
-
 }
