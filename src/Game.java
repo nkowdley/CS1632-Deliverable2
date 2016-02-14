@@ -10,7 +10,7 @@ import java.io.*;
 public class Game
 {
   
-	public CoffeeMakerQuest(){
+	public Game(){
 		
 		Player p = new Player();
 	  
@@ -28,7 +28,6 @@ public class Game
 		Room currentRoom;
 	
 	}
-
 
 	public static void startGame(){
 		
