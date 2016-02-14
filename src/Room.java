@@ -76,8 +76,11 @@ public class Room
   * @param  roomNum  The "number" of the room the user is trying to enter.
   * @return adjective  a String that has an adjective chosen from an array
   */
-  public String getDescription(){
-	String adj = "";
+  public String getDescription()
+  {
+	String adj = new String();
+  //adjectives that describe our wonderful teacher bill laboon
+  String adjArray[10]={"Inspirational", "Cool-Dude","Chili-Pepper",};
 	return adj;
   }
   /**
