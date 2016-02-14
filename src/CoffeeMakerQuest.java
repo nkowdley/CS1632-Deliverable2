@@ -93,7 +93,21 @@ public class CoffeeMakerQuest
 	}
 	  
 	public static void look(){
-		  
+		int roomHas = currentRoom.getObjectInRoom();
+		
+		switch (roomHas){
+			
+			case 1: 
+				p.getSugar();
+			case 2:
+				p.getCream();
+			case 3:
+				p.getCoffee();
+			default:
+				System.out.println("You don't see anything out of the ordinary.");
+				
+		}
+			
 	}
 
 }
