@@ -11,11 +11,11 @@ import java.io.*;
 public class Room
 {
   //initialize the state of coffee cream and sugar as global variables
-  int coffee=0;
-  int cream=0;
-  int sugar=0;
-  int northDoor=0;
-  int southDoor=0;
+  boolean coffee=false;
+  boolean  cream=false;
+  boolean  sugar=false;
+  boolean northDoor=false;
+  boolean southDoor=false;
   /**
   * A constructor to create a room in the game using the "number" of the room
   * The player starts in room 0, and goes north to get into room 1, etc.
@@ -40,41 +40,60 @@ public class Room
   {
     switch(roomNum)
     {
-      case 0:
-              cream=1;
-              northDoor=1;
-              break;
       case 1:
-              coffee=1;
-              northDoor=1;
-              southDoor=1;
+              cream=true;
+              northDoor=true;
+              southDoor=false;
               break;
       case 2:
-              northDoor=1;
-              southDoor=1;
+              coffee=true;
+              northDoor=true;
+              southDoor=true;
               break;
       case 3:
-              northDoor=1;
-              southDoor=1;
+              northDoor=true;
+              southDoor=true;
               break;
       case 4:
-              northDoor=1;
-              southDoor=1;
+              northDoor=true;
+              southDoor=true;
               break;
       case 5:
-              northDoor=0;
-              southDoor=1;
-              sugar=1;
+              northDoor=true;
+              southDoor=true;
               break;
+      case 6:
+              northDoor=false;
+              southDoor=true;
+              sugar=true;
+              break;
+      default:
+            System.out.println("Something about a magical world...returning you to beginning");
     }
   }
   /**
   * Gets the adjective description of a room, based on the array of
   * @param  roomNum  The "number" of the room the user is trying to enter.
   * @return adjective  a String that has an adjective chosen from an array
-  */  
+  */
   public String getDescription(){
 	String adj = "";
 	return adj;
+  }
+  /**
+  * Gets the adjective description of a room, based on the array of
+  * @param  roomNum  The "number" of the room the user is trying to enter.
+  * @return adjective  a String that has an adjective chosen from an array
+  */
+  public int getObjectInRoom()
+  {
+    if (this.sugar)
+      return 1;
+    else if (this.cream)
+      return 2;
+    else if (this.coffee)
+      return 3;
+    else
+      return 0;
   }
 }
