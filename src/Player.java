@@ -4,6 +4,10 @@ public class Player {
 	private boolean hasCream = false;
 	private boolean hasCoffee = false;
 	
+	public Player(){
+		
+	}
+	
 	public void getSugar() {
 		System.out.println("You found some sweet sugar!");
 		this.hasSugar = true;

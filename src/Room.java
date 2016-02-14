@@ -78,10 +78,9 @@ public class Room
   */
   public String getDescription(int roomNum)
   {
-    String adj = new String();
     //adjectives that describe our wonderful teacher bill laboon
-    String adjArray[6]={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
-    return adj[roomNum];
+    String[] adjArray={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
+    return adjArray[roomNum];
   }
   /**
   * Gets the adjective description of a room, based on the array of

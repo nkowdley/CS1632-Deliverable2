@@ -10,22 +10,22 @@ import java.io.*;
 public class CoffeeMakerQuest
 {
   
-	Player p = new Player();
+	static Player p = new Player();
   
-    LinkedList house = new LinkedList<Room>();
+    static LinkedList house = new LinkedList<Room>();
 
-	ListIterator<Room> northRoom = house.listIterator();
+	static ListIterator<Room> northRoom = house.listIterator();
 
-	Room room1 = new Room(1);
-	Room room2 = new Room(2);
-	Room room3 = new Room(3);
-	Room room4 = new Room(4);
-	Room room5 = new Room(5);
-	Room room6 = new Room(6);
+	static Room room1 = new Room(1);
+	static Room room2 = new Room(2);
+	static Room room3 = new Room(3);
+	static Room room4 = new Room(4);
+	static Room room5 = new Room(5);
+	static Room room6 = new Room(6);
 	
-	Iterator<Room> southRoom = house.descendingIterator();
+	static Iterator<Room> southRoom = house.descendingIterator();
 	
-	Room currentRoom;
+	static Room currentRoom;
 
   
 	public static void main(String[] args)
@@ -82,7 +82,7 @@ public class CoffeeMakerQuest
 	  
 	public static void moveNorth(){
 		if (northRoom.hasNext())
-			currentRoom = northRoomRoom.next();
+			currentRoom = northRoom.next();
 		else
 			System.out.println("");
 	}
