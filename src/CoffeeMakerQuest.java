@@ -13,10 +13,9 @@ public class CoffeeMakerQuest
 	Player p = new Player();
   
     LinkedList house = new LinkedList<Room>();
-<<<<<<< HEAD
+
 	ListIterator<Room> northRoom = house.listIterator();
-=======
->>>>>>> 83fb9bb85e0e9460d565cad570dcfcedb98cafd7
+
 	Room room1 = new Room(1);
 	Room room2 = new Room(2);
 	Room room3 = new Room(3);
