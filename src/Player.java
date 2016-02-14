@@ -5,7 +5,7 @@ public class Player {
 	private boolean hasCoffee = false;
 	
 	public Player(){
-		
+
 	}
 	
 	public void getSugar() {

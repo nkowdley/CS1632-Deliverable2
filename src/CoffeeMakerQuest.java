@@ -16,12 +16,12 @@ public class CoffeeMakerQuest
 
 	static ListIterator<Room> northRoom = house.listIterator();
 
+	static Room room0 = new Room(0);
 	static Room room1 = new Room(1);
 	static Room room2 = new Room(2);
 	static Room room3 = new Room(3);
 	static Room room4 = new Room(4);
 	static Room room5 = new Room(5);
-	static Room room6 = new Room(6);
 	
 	static Iterator<Room> southRoom = house.descendingIterator();
 	
@@ -41,12 +41,13 @@ public class CoffeeMakerQuest
 
 	public static void startGame(){
 		
+		house.add(room0);
 		house.add(room1);
 		house.add(room2);
 		house.add(room3);
 		house.add(room4);
 		house.add(room5);
-		house.add(room6);
+		
 	}
 
 	public static void Actions()

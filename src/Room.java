@@ -40,13 +40,17 @@ public class Room
   {
     switch(roomNum)
     {
-      case 1:
+      case 0:
       cream=true;
       northDoor=true;
       southDoor=false;
       break;
-      case 2:
+      case 1:
       coffee=true;
+      northDoor=true;
+      southDoor=true;
+      break;
+      case 2:
       northDoor=true;
       southDoor=true;
       break;
@@ -59,10 +63,6 @@ public class Room
       southDoor=true;
       break;
       case 5:
-      northDoor=true;
-      southDoor=true;
-      break;
-      case 6:
       northDoor=false;
       southDoor=true;
       sugar=true;
