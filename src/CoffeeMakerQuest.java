@@ -13,7 +13,7 @@ public class CoffeeMakerQuest
   {
     System.out.println("Coffee Maker Quest v1.1");
     System.out.println("Instructions for Coffee Maker Quest - ");
-    System.out.println("You are a brave student trying to study for Bill Laboon's Software Testing Class, but you need caffeine.");
+    System.out.println("You are a brave student trying to finish Deliverable 2 for Bill Laboon's Software Testing Class, but you need caffeine.");
     System.out.println("The goal of the game is to collect sugar, coffee, and cream so that you can study.");
     Actions();
     return;
@@ -41,7 +41,7 @@ public class CoffeeMakerQuest
   public static void Actions()
   {
     Scanner sc = new Scanner(System.in);
-    System.out.print("INSTRUCTIONS (N,S,L,I,D,H) >");
+    System.out.print("INSTRUCTIONS (N,S,L,I,D,H) > ");
     String input = sc.nextLine();
     //System.out.println(input); //Print out input
 
