@@ -25,7 +25,7 @@ public class Room
   public Room(int roomNum)
   {
     populateRoom(roomNum);
-    getDescription();
+    getDescription(roomNum);
   }
 
   /**
@@ -41,34 +41,34 @@ public class Room
     switch(roomNum)
     {
       case 1:
-              cream=true;
-              northDoor=true;
-              southDoor=false;
-              break;
+      cream=true;
+      northDoor=true;
+      southDoor=false;
+      break;
       case 2:
-              coffee=true;
-              northDoor=true;
-              southDoor=true;
-              break;
+      coffee=true;
+      northDoor=true;
+      southDoor=true;
+      break;
       case 3:
-              northDoor=true;
-              southDoor=true;
-              break;
+      northDoor=true;
+      southDoor=true;
+      break;
       case 4:
-              northDoor=true;
-              southDoor=true;
-              break;
+      northDoor=true;
+      southDoor=true;
+      break;
       case 5:
-              northDoor=true;
-              southDoor=true;
-              break;
+      northDoor=true;
+      southDoor=true;
+      break;
       case 6:
-              northDoor=false;
-              southDoor=true;
-              sugar=true;
-              break;
+      northDoor=false;
+      southDoor=true;
+      sugar=true;
+      break;
       default:
-            System.out.println("Something about a magical world...returning you to beginning");
+      System.out.println("Something about a magical world...returning you to beginning");
     }
   }
   /**
@@ -76,27 +76,27 @@ public class Room
   * @param  roomNum  The "number" of the room the user is trying to enter.
   * @return adjective  a String that has an adjective chosen from an array
   */
-  public String getDescription()
+  public String getDescription(int roomNum)
   {
-	String adj = new String();
-  //adjectives that describe our wonderful teacher bill laboon
-  String adjArray[10]={"Inspirational", "Cool-Dude","Chili-Pepper",};
-	return adj;
+    String adj = new String();
+    //adjectives that describe our wonderful teacher bill laboon
+    String adjArray[6]={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
+    return adj[roomNum];
   }
   /**
   * Gets the adjective description of a room, based on the array of
   * @param  roomNum  The "number" of the room the user is trying to enter.
-  * @return adjective  a String that has an adjective chosen from an array
+  * @return int  a int that corresponds to the object in the room
   */
   public int getObjectInRoom()
   {
     if (this.sugar)
-      return 1;
+    return 1;
     else if (this.cream)
-      return 2;
+    return 2;
     else if (this.coffee)
-      return 3;
+    return 3;
     else
-      return 0;
+    return 0;
   }
 }
