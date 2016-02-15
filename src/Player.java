@@ -4,10 +4,6 @@ public class Player {
 	private boolean hasCream = false;
 	private boolean hasCoffee = false;
 	
-	public Player(){
-
-	}
-	
 	public void getSugar() {
 		System.out.println("You found some sweet sugar!");
 		this.hasSugar = true;
@@ -45,29 +41,30 @@ public class Player {
 		if ((this.hasCoffee) && (this.hasCream) && (this.hasSugar)) {
 			System.out.println("You drink the beverage and are ready to study!");
 			win = true;
+			System.out.println("You win!");
 		}
 		
 		else if (this.hasCoffee) {
 			if (!this.hasCream)	//has coffee but no cream
-				System.out.println("Without cream, you get an ulcer and cannot study.");
+				System.out.println("Without cream, you get an ulcer and cannot study.\nYou lose!");
 			else	//has coffee and cream but no sugar
-				System.out.println("Without sugar, the coffee is too bitter. You cannot study.");
+				System.out.println("Without sugar, the coffee is too bitter. You cannot study.\nYou lose!");
 		}
 		
 		else if (this.hasCream) {
 			if (!this.hasSugar)	//has cream but no coffee or sugar
-				System.out.println("You can drink the cream, but without caffeine, you cannot study.");
+				System.out.println("You can drink the cream, but without caffeine, you cannot study.\nYou lose!");
 			else	//has cream and sugar but no coffee
-				System.out.println("You can drink the sweetened cream, but without caffeine, you cannot study.");
+				System.out.println("You can drink the sweetened cream, but without caffeine, you cannot study.\nYou lose!");
 		}
 		
 		else if (this.hasSugar) {	//has sugar but no coffee or cream
-			System.out.println("You eat the sugar, but without caffeine, you cannot study.");
+			System.out.println("You eat the sugar, but without caffeine, you cannot study.\nYou lose!");
 		}
 		
 		else //has no coffee or cream or sugar
 			System.out.println("You drink the air, as you have no coffee, sugar, or cream.\nThe air is invigorating, but not invigorating enough." +
-				"You cannot study.");
+				" You cannot study.\nYou lose!");
 		
 		return win;
 	}
