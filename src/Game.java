@@ -39,7 +39,14 @@ public class Game
 	public void Actions()
 	{
 		
-		System.out.println("INSTRUCTIONS (N,S,L,I,D,H) > ");
+		System.out.println("\nYou see a " + currentRoom.roomAdj + " room.");
+		System.out.println("You find " + currentRoom.objAdj + ".");
+		if (currentRoom.northDoor)
+			System.out.println("There is a door that leads north.");
+		if(currentRoom.southDoor)
+			System.out.println("There is a door that leads south.");
+		
+		System.out.println("\nINSTRUCTIONS (N,S,L,I,D,H) > ");
 		String input = sc.nextLine();
 
 		if (input.equalsIgnoreCase("N")){
@@ -69,7 +76,7 @@ public class Game
 	public void moveNorth(){
 		if (currentRoom != house[5]){
 			i++;
-			currentRoom = house[i];
+			currentRoom = house[i];		
 		}
 		else
 			System.out.println("No north door exists.");

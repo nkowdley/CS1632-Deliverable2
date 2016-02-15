@@ -14,8 +14,9 @@ public class Room
   boolean coffee=false;
   boolean  cream=false;
   boolean  sugar=false;
-  boolean northDoor=false;
-  boolean southDoor=false;
+  public boolean northDoor=false;
+  public boolean southDoor=false;
+  public String roomAdj, objAdj;
   /**
   * A constructor to create a room in the game using the "number" of the room
   * The player starts in room 0, and goes north to get into room 1, etc.
@@ -25,7 +26,8 @@ public class Room
   public Room(int roomNum)
   {
     populateRoom(roomNum);
-    getDescription(roomNum);
+    roomAdj = getRoomDescription(roomNum);
+	objAdj = getObjDescription(roomNum);
   }
 
   /**
@@ -76,12 +78,19 @@ public class Room
   * @param  roomNum  The "number" of the room the user is trying to enter.
   * @return adjective  a String that has an adjective chosen from an array
   */
-  public String getDescription(int roomNum)
+  public String getRoomDescription(int roomNum)
   {
     //adjectives that describe our wonderful teacher bill laboon
     String[] adjArray={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
     return adjArray[roomNum];
   }
+  
+  public String getObjDescription(int roomNum){
+	String[] objArray={"a statue of Bill Laboon", "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon",
+			"an autographed photo of Bill Laboon",  "\"Hackin' Fellow\" on repeat 'cause it's such an amazing song", "a broken record","RentACat cats"};
+	return objArray[roomNum];
+  }
+  
   /**
   * Gets the adjective description of a room, based on the array of
   * @param  roomNum  The "number" of the room the user is trying to enter.
