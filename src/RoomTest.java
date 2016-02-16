@@ -1,6 +1,8 @@
 import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
 
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class RoomTest {
 
@@ -94,10 +96,27 @@ public class RoomTest {
 	}
 
 	@Test
-	public void testGetObjectInRoom() {
-		
-		
+	public void testGetObjectInRoomCream() {
+		Room x = new Room(0);
+		assertEquals(x.getObjectInRoom(),2);
 		
 	}
-
+	@Test
+	public void testGetObjectInRoomCoffee() {
+		Room x = new Room(1);
+		assertEquals(x.getObjectInRoom(),3);
+		
+	}
+	@Test
+	public void testGetObjectInRoomSugar() {
+		Room x = new Room(5);
+		assertEquals(x.getObjectInRoom(),1);
+		
+	}
+	@Test
+	public void testGetObjectInRoomFail() {
+		Room x = new Room(3);
+		assertEquals(x.getObjectInRoom(),0);
+		
+	}
 }

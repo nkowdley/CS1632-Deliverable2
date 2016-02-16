@@ -44,29 +44,27 @@ public class Room
     {
       case 0:
       cream=true;
-      northDoor=true;
-      southDoor=false;
+      this.setNorthDoor();
       break;
       case 1:
       coffee=true;
-      northDoor=true;
-      southDoor=true;
+      this.setNorthDoor();
+      this.setSouthDoor();
       break;
       case 2:
-      northDoor=true;
-      southDoor=true;
+      this.setNorthDoor();
+      this.setSouthDoor();
       break;
       case 3:
-      northDoor=true;
-      southDoor=true;
+      this.setNorthDoor();
+      this.setSouthDoor();
       break;
       case 4:
-      northDoor=true;
-      southDoor=true;
+      this.setNorthDoor();
+      this.setSouthDoor();
       break;
       case 5:
-      northDoor=false;
-      southDoor=true;
+      this.setSouthDoor();
       sugar=true;
       break;
       default:
@@ -74,6 +72,23 @@ public class Room
       System.exit(100);
     }
   }
+  
+  public void setNorthDoor(){
+	  this.northDoor = true;
+  }
+  
+  public void setSouthDoor(){
+	  this.southDoor = true;
+  }
+  
+  public boolean getNorthDoor(){
+	  return this.northDoor;
+  }
+  
+  public boolean getSouthDoor(){
+	  return this.southDoor;
+  }
+  
   /**
   * Gets the adjective description of a room, based on the array of
   * @param  roomNum  The "number" of the room the user is trying to enter.

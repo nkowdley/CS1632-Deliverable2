@@ -5,17 +5,15 @@ public class Player {
 	private boolean hasCoffee = false;
 	
 	public void getSugar() {
-		System.out.println("You found some sweet sugar!");
 		this.hasSugar = true;
 	}
 	
 	public void getCream() {
-		System.out.println("You found some creamy cream!");
 		this.hasCream = true;
 	}
 	
 	public void getCoffee() {
-		System.out.println("You found some caffeinated coffee!");
+	
 		this.hasCoffee = true;
 	}
 	
@@ -23,13 +21,16 @@ public class Player {
 		return (this.hasCoffee) && (this.hasCream) && (this.hasSugar);
 	}
 	
-	public void showInventory() {
+	public String showInventory() {
+		StringBuilder retStr = new StringBuilder("");
 		if (this.hasCoffee)
-			System.out.println("You have a cup of delicious coffee.");
+			retStr.append("\nYou have a cup of delicious coffee.");
 		if (this.hasCream)
-			System.out.println("You have some fresh cream.");
-		if (this.hasSugar)
-			System.out.println("You have some tasty sugar.");
+			retStr.append("\nYou have some fresh cream.");
+		 if (this.hasSugar)
+			retStr.append("\nYou have some tasty sugar.");
+		 
+		 return retStr.toString();
 	}
 	
 	public boolean drink() {
@@ -38,7 +39,7 @@ public class Player {
 		showInventory();
 		
 		System.out.println();
-		if ((this.hasCoffee) && (this.hasCream) && (this.hasSugar)) {
+		if (canWin()) {
 			System.out.println("You drink the beverage and are ready to study!");
 			win = true;
 			System.out.println("You win!");

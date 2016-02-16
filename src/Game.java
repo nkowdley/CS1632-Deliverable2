@@ -16,7 +16,7 @@ public class Game
 	private Room currentRoom;
 	private int i = 0;
 	Scanner sc = new Scanner(System.in);
-	
+	private boolean north, south;
 	
 	public Game(){
 	
@@ -50,16 +50,16 @@ public class Game
 		String input = sc.nextLine();
 
 		if (input.equalsIgnoreCase("N")){
-			this.moveNorth();
+			north = this.moveNorth();
 		}
 		else if (input.equalsIgnoreCase("S")){
-			this.moveSouth();
+			south = this.moveSouth();
 		}
 		else if (input.equalsIgnoreCase("L")){
-			this.look();
+			System.out.println(this.look());
 		}
 		else if (input.equalsIgnoreCase("I")) {
-			p.showInventory();
+			System.out.println(p.showInventory());
 		}
 		else if (input.equalsIgnoreCase("D")) {
 			p.drink();
@@ -72,43 +72,57 @@ public class Game
 			System.out.println("What?");
 		
 	}
+	
+	public void setCurrentRoom(Room r){
+		currentRoom = r;
+	}
 	  
-	public void moveNorth(){
-		if (currentRoom != house[5]){
-			i++;
-			currentRoom = house[i];		
+	public boolean moveNorth(){
+		if (currentRoom.getNorthDoor()){
+			if (i < 5) i++;
+			setCurrentRoom(house[i]);
+			return true;
 		}
 		else
 			System.out.println("No north door exists.");
+		return false;
 	}
 	  
-	public void moveSouth(){
-		if (currentRoom != house[0]){
-			i--;
-			currentRoom = house[i];
+	public boolean moveSouth(){
+		if (currentRoom.getSouthDoor() == true){
+			if (i >0) i--;
+			setCurrentRoom(house[i]);
+			return true;
 		}
 		else
 			System.out.println("No south door exists.");
+		return false;
 	}
 	  
-	public void look(){
+	public String look(){
 		int roomHas = currentRoom.getObjectInRoom();
+		String retStr = "";
 		
 		switch (roomHas){
 			
 			case 1: 
 				p.getSugar();
+				retStr = "You found some sweet sugar!";
 				break;
 			case 2:
 				p.getCream();
+				retStr = "You found some creamy cream!";
 				break;
 			case 3:
 				p.getCoffee();
+				retStr = "You found some caffeinated coffee!";
 				break;
 			default:
-				System.out.println("You don't see anything out of the ordinary.");
+				retStr = "You don't see anything out of the ordinary.";
 				
 		}
+		
+		return retStr;
 			
 	}
 
