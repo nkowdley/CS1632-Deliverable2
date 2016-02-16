@@ -30,6 +30,9 @@ public class Player {
 		 if (this.hasSugar)
 			retStr.append("\nYou have some tasty sugar.");
 		 
+		 if (retStr.toString().equals(""))
+			 retStr.append("You do not have any items in your inventory.");
+		 
 		 return retStr.toString();
 	}
 	

@@ -120,4 +120,24 @@ public class RoomTest {
 		assertEquals(x.getObjectInRoom(),0);
 		
 	}
+	
+	@Test
+	public void testGetNorthDoorTrue(){
+		Room x = new Room(0);
+		x.setNorthDoor();
+		assertTrue(x.getNorthDoor());
+	}
+	
+	@Test
+	public void testGetNorthDoorFalse(){
+		Room x = new Room(5);
+		assertFalse(x.getNorthDoor());
+	}
+	
+	@Test
+	public void testGetSouthDoorTrue(){
+		Room x = new Room(0);
+		x.setSouthDoor();
+		assertTrue(x.getSouthDoor());
+	}
 }

@@ -45,11 +45,39 @@ public class GameTest {
 	}
 
 	@Test
-	public void testLook(){
+	public void testLookCream(){
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(2);
 		Game g = new Game();
+		g.setCurrentRoom(mockedRoom);
 		assertEquals(g.look(), "You found some creamy cream!");
+	}
+	
+	@Test
+	public void testLookSugar(){
+		Room mockedRoom = Mockito.mock(Room.class);
+		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(1);
+		Game g = new Game();
+		g.setCurrentRoom(mockedRoom);
+		assertEquals(g.look(), "You found some sweet sugar!");
+	}
+	
+	@Test
+	public void testLookCoffee(){
+		Room mockedRoom = Mockito.mock(Room.class);
+		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(3);
+		Game g = new Game();
+		g.setCurrentRoom(mockedRoom);
+		assertEquals(g.look(), "You found some caffeinated coffee!");
+	}
+	
+	@Test
+	public void testLookNothing(){
+		Room mockedRoom = Mockito.mock(Room.class);
+		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(0);
+		Game g = new Game();
+		g.setCurrentRoom(mockedRoom);
+		assertEquals(g.look(), "You don't see anything out of the ordinary.");
 	}
 
 

@@ -45,7 +45,7 @@ public class PlayerTest {
 	@Test
 	public void testShowInventoryNone() {
 		Player x = new Player();
-		assertEquals(x.showInventory(), "");
+		assertEquals(x.showInventory(), "You do not have any items in your inventory.");
 	}
 	
 	@Test
@@ -70,6 +70,44 @@ public class PlayerTest {
 		x.getSugar();
 		x.getCream();
 		assertTrue(x.drink());
+	}
+	
+	@Test
+	public void testDrinkCreamAndCoffee() {
+		Player x = new Player();
+		x.getCoffee();
+		x.getCream();
+		assertFalse(x.drink());
+	}
+	
+	
+	@Test
+	public void testDrinkSugar() {
+		Player x = new Player();
+		x.getSugar();
+		assertFalse(x.drink());
+	}
+	
+	@Test
+	public void testDrinkCream() {
+		Player x = new Player();
+		x.getCream();
+		assertFalse(x.drink());
+	}
+	
+	
+	@Test
+	public void testDrinkCreamAndSugar() {
+		Player x = new Player();
+		x.getSugar();
+		x.getCream();
+		assertFalse(x.drink());
+	}
+	
+	@Test
+	public void testDrinkNothing() {
+		Player x = new Player();
+		assertFalse(x.drink());
 	}
 
 }
