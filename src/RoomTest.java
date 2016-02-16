@@ -83,12 +83,21 @@ public class RoomTest {
 
 	@Test
 	public void testGetObjDescription() {
-		fail("Not yet implemented");
+		//adjectives that describe our wonderful teacher bill laboon
+	    String[] objArray={"a statue of Bill Laboon", "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon",
+				"an autographed photo of Bill Laboon",  "\"Hackin' Fellow\" on repeat 'cause it's such an amazing song", "a broken record","RentACat cats"};
+		for(int i=0;i<6;i++)
+		{
+			Room x = new Room(i);
+			assertEquals(x.objAdj,objArray[i]);
+		}
 	}
 
 	@Test
 	public void testGetObjectInRoom() {
-		fail("Not yet implemented");
+		
+		
+		
 	}
 
 }
