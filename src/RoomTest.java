@@ -69,13 +69,16 @@ public class RoomTest {
 		assertFalse(x.coffee);
 		assertTrue(x.sugar);
 	}
-
-
-
 	
 	@Test
 	public void testGetRoomDescription() {
-		fail("Not yet implemented");
+	    //adjectives that describe our wonderful teacher bill laboon
+	    String[] adjArray={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
+		for(int i=0;i<6;i++)
+		{
+			Room x = new Room(i);
+			assertEquals(x.roomAdj,adjArray[i]);
+		}
 	}
 
 	@Test
