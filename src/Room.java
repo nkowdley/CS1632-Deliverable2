@@ -70,7 +70,8 @@ public class Room
       sugar=true;
       break;
       default:
-      System.out.println("Something about a magical world...returning you to beginning");
+      System.out.println("Something about a magical world.");
+      System.exit(100);
     }
   }
   /**
@@ -98,25 +99,13 @@ public class Room
   */
   public int getObjectInRoom()
   {
-    if (this.getSugar())
+    if (this.sugar)
       return 1;
-    else if (this.getCream())
+    else if (this.cream)
       return 2;
-    else if (this.getCoffee())
+    else if (this.coffee)
       return 3;
     else
       return 0;
-  }
-  public boolean getSugar()
-  {
-	  return this.sugar;
-  }
-  public boolean getCream()
-  {
-	  return this.cream;
-  }
-  public boolean getCoffee()
-  {
-	  return this.coffee;
   }
 }
