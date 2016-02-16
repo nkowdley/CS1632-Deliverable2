@@ -69,7 +69,7 @@ public class Room
       break;
       default:
       System.out.println("Something about a magical world.");
-      System.exit(100);
+      //System.exit(100);
     }
   }
   
@@ -96,15 +96,21 @@ public class Room
   */
   public String getRoomDescription(int roomNum)
   {
+	String[] adjArray={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
     //adjectives that describe our wonderful teacher bill laboon
-    String[] adjArray={"Inspirational", "Cool-Dude","Chili-Pepper","Smart", "Fun", "Hilarious"};
-    return adjArray[roomNum];
+    if ((roomNum < 6) && (roomNum >= 0))
+	  return adjArray[roomNum];
+    return "Error: Invalid room number";
   }
   
   public String getObjDescription(int roomNum){
+	  
 	String[] objArray={"a statue of Bill Laboon", "Amazon's best-seller, \"A Friendly Introduction to Software Testing\" by THE Bill Laboon",
 			"an autographed photo of Bill Laboon",  "\"Hackin' Fellow\" on repeat 'cause it's such an amazing song", "a broken record","RentACat cats"};
-	return objArray[roomNum];
+	if ((roomNum < 6) && (roomNum >= 0)) 
+	  return objArray[roomNum];
+
+	return "Error: Invalid room number";
   }
   
   /**

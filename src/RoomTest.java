@@ -7,11 +7,6 @@ import org.mockito.Mockito;
 public class RoomTest {
 
 	@Test
-	public void testRoom() {
-		assertTrue(true);
-	}
-
-	@Test
 	public void testPopulateRoom0() {
 		//check that all variables are set properly for each room
 		Room x = new Room(0);
@@ -81,6 +76,12 @@ public class RoomTest {
 			Room x = new Room(i);
 			assertEquals(x.roomAdj,adjArray[i]);
 		}
+	}
+	
+	@Test
+	public void testGetRoomDescriptionInvalid() {
+		Room x = new Room(6);
+	    assertEquals(x.roomAdj, "Error: Invalid room number");
 	}
 
 	@Test
