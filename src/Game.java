@@ -9,6 +9,7 @@ import java.io.*;
 
 public class Game
 {
+	//globals
 	public Player p = new Player();
 	  
 	public Room[] house = new Room[6];
@@ -19,7 +20,7 @@ public class Game
 	private boolean north, south;
 	
 	public Game(){
-	
+		//create the rooms in the house for the game
 		Room room0 = new Room(0);
 		Room room1 = new Room(1);
 		Room room2 = new Room(2);
@@ -38,7 +39,7 @@ public class Game
 
 	public void Actions()
 	{
-		
+		//print out the current room details, and act on the users input
 		System.out.println("\nYou see a " + currentRoom.roomAdj + " room.");
 		System.out.println("You find " + currentRoom.objAdj + ".");
 		if (currentRoom.northDoor)
@@ -74,10 +75,12 @@ public class Game
 	}
 	
 	public void setCurrentRoom(Room r){
+		//change the current room
 		currentRoom = r;
 	}
 	  
 	public boolean moveNorth(){
+		//move the room to the room to the north
 		if (currentRoom.getNorthDoor()){
 			if (i < 5) i++;
 			setCurrentRoom(house[i]);
@@ -89,6 +92,7 @@ public class Game
 	}
 	  
 	public boolean moveSouth(){
+		//move the current room to the room to the south if one exists
 		if (currentRoom.getSouthDoor() == true){
 			if (i >0) i--;
 			setCurrentRoom(house[i]);
@@ -100,6 +104,7 @@ public class Game
 	}
 	  
 	public String look(){
+		//find the ingredient in the room
 		int roomHas = currentRoom.getObjectInRoom();
 		String retStr = "";
 		

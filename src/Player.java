@@ -1,27 +1,31 @@
 public class Player {
-	
+	//globals
 	private boolean hasSugar = false;
 	private boolean hasCream = false;
 	private boolean hasCoffee = false;
 	
 	public void getSugar() {
+		//give the player sugar
 		this.hasSugar = true;
 	}
 	
 	public void getCream() {
+		//give the player cream
 		this.hasCream = true;
 	}
 	
 	public void getCoffee() {
-	
+		//give the player coffee
 		this.hasCoffee = true;
 	}
 	
 	public boolean canWin() {
+		//if the user has all 3 things, return true, else return false. This can be used to evaluate if the user can win
 		return (this.hasCoffee) && (this.hasCream) && (this.hasSugar);
 	}
 	
 	public String showInventory() {
+		//show the inventory string when the user wants to see the inventory
 		StringBuilder retStr = new StringBuilder("");
 		if (this.hasCoffee)
 			retStr.append("\nYou have a cup of delicious coffee.");
@@ -37,6 +41,7 @@ public class Player {
 	}
 	
 	public boolean drink() {
+		//evaluate whether or not we can win by drinking the ingredients
 		boolean win = false;
 		
 		showInventory();
