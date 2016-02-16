@@ -7,6 +7,7 @@ public class GameTest {
 
 	@Test
 	public void testMoveNorthFalse() {
+		//verify that if the current room does not have a North Door, you cannot move north
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getNorthDoor()).thenReturn(false);
 		Game g = new Game();
@@ -17,6 +18,7 @@ public class GameTest {
 	
 	@Test
 	public void testMoveNorthTrue() {
+		//verify that if the current room has a north door, you can move north
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getNorthDoor()).thenReturn(true);
 		Game g = new Game();
@@ -27,6 +29,7 @@ public class GameTest {
 	
 	@Test
 	public void testMoveSouthFalse() {
+		//verify that if the current room does not have a South Door, you cannot move south
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getSouthDoor()).thenReturn(false);
 		Game g = new Game();
@@ -37,6 +40,7 @@ public class GameTest {
 	
 	@Test
 	public void testMoveSouthTrue() {
+		//verify that if the current room has a south Door, you cannot move south
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getSouthDoor()).thenReturn(true);
 		Game g = new Game();
@@ -46,6 +50,7 @@ public class GameTest {
 
 	@Test
 	public void testLookCream(){
+		//verify that if the room has cream in it, the game tells you that you have cream
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(2);
 		Game g = new Game();
@@ -55,6 +60,7 @@ public class GameTest {
 	
 	@Test
 	public void testLookSugar(){
+		//verify that if the room has sugar in it, the game tells you that you have sugar
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(1);
 		Game g = new Game();
@@ -64,6 +70,7 @@ public class GameTest {
 	
 	@Test
 	public void testLookCoffee(){
+		//verify that if the room has coffee in it, the game tells you that you have coffee
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(3);
 		Game g = new Game();
@@ -73,6 +80,7 @@ public class GameTest {
 	
 	@Test
 	public void testLookNothing(){
+		//verify that if the room has nothing in it, the game tells you that you have nothing
 		Room mockedRoom = Mockito.mock(Room.class);
 		Mockito.when(mockedRoom.getObjectInRoom()).thenReturn(0);
 		Game g = new Game();
