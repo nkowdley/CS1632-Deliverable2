@@ -98,13 +98,25 @@ public class Room
   */
   public int getObjectInRoom()
   {
-    if (this.sugar)
+    if (this.getSugar())
       return 1;
-    else if (this.cream)
+    else if (this.getCream())
       return 2;
-    else if (this.coffee)
+    else if (this.getCoffee())
       return 3;
     else
       return 0;
+  }
+  public boolean getSugar()
+  {
+	  return this.sugar;
+  }
+  public boolean getCream()
+  {
+	  return this.cream;
+  }
+  public boolean getCoffee()
+  {
+	  return this.coffee;
   }
 }
